@@ -1,0 +1,17 @@
+crear proyecto tipo web: symfony new 'nombre proyecto' --full || composer create-project symfony/website-skeleton 'nombre proyecto'
+crear proyecto tipo microservicio :  symfony new my_project_name || composer create-project symfony/skeleton my_project_name
+cuando se crea un proyecto las rutas ejecutar: composer require apache-pack
+crear base de datos:  php bin/console doctrine:database:create
+crear entidades: php bin/console doctrine:mapping:import App\Entity annotation --path=src/Entity
+crear entidades yml: php bin/console doctrine:mapping:import App\Entity yml--path=src/Entity
+generar los get y set en las entidades: php bin/console make:entity --regenerate App
+
+regenerar los entityes: php bin/console make:entity  --regenerate
+
+limpiar cache: php bin/console doctrine:cache:clear-metadata
+crear migracion: php bin/console doctrine:migrations:diff
+ejecutar migracion: php bin/console doctrine:migrations:migrate
+
+listado rutas: php bin/console debug:router
+
+consultas desde consola: php bin/console doctrine:query:sql "SELECT * FROM nombretabla"

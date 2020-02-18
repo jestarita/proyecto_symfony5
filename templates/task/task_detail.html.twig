@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TaskController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h2>Detalle de tarea #{{ tarea_get.id  }}✅</h2>
+     <p class="data-task">
+        {{tarea_get.user.name }} {{tarea_get.user.surname }} 
+         | {{tarea_get.createdAt|date('d/m/Y h:i') }} | 
+        {% if tarea_get.priority == 'high' %}
+              {{ 'Alta' }}
+        {% endif %}
+        {% if tarea_get.priority == 'medium' %}
+            {{ 'Media' }}
+        {% endif %}
+        {% if tarea_get.priority == 'low' %}
+            {{ 'Baja' }}
+        {% endif %} 
+         | {{tarea_get.hours}}h
+    </p>
+    <p>
+        {{tarea_get.content}}
+    </p>
+   
+</div>
+{% endblock %}
